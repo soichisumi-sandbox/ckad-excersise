@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: bbnode
+  name: bbnode
+spec:
+  containers:
+  - image: nginx
+    name: bbnode
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+  nodeSelector:
+    accelerator: nvidia-tesla-p100

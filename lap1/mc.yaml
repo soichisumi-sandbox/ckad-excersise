@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: mc
+  name: mc
+spec:
+  containers:
+  - command: ["sh"]
+    args: ["-c", "echo hello; sleep 3600"]
+    image: busybox
+    name: mc
+    resources: {}
+  - command: ["sh"]
+    args: ["-c", "echo hello; sleep 3600"]
+    image: busybox
+    name: mc-2
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always

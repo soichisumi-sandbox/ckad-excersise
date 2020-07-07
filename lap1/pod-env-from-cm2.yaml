@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx2
+spec:
+  containers:
+    - name: nginx
+      image: nginx
+      env:
+        # Define the environment variable
+        - name: var6
+          valueFrom:
+            configMapKeyRef:
+              # The ConfigMap containing the value you want to assign to SPECIAL_LEVEL_KEY
+              name: anotherone
+              # Specify the key associated with the value
+              key: var6
+        - name: var7
+          valueFrom:
+            configMapKeyRef:
+              # The ConfigMap containing the value you want to assign to SPECIAL_LEVEL_KEY
+              name: anotherone
+              # Specify the key associated with the value
+              key: var7
+  restartPolicy: Never

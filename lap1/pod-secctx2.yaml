@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: security-context-demo2
+spec:
+  securityContext:
+    capabilities:
+      add: ["NET_ADMIN", "SYS_TIME"]
+  containers:
+  - name: nginx
+    image: nginx

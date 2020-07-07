@@ -1,0 +1,14 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: job3
+spec:
+  activeDeadlineSeconds: 30
+  template:
+    spec:
+      containers:
+      - name: busybox
+        image: busybox
+        command: ["sh"]
+        args: ["-c", "echo hello; sleep 30; echo world"]
+      restartPolicy: Never

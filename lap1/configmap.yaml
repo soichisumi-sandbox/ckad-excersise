@@ -1,0 +1,6 @@
+apiVersion: v1
+data:
+  yo: yoyo
+kind: ConfigMap
+metadata:
+  name: config

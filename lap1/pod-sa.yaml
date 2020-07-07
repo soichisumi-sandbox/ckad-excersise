@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-sa
+spec:
+  serviceAccountName: myuser
+  automountServiceAccountToken: false
+  containers:
+  - image: nginx
+    name: nginx-sa
+  restartPolicy: Never
